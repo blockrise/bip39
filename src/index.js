@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const createHash = require("create-hash");
+var Buffer = require("buffer").Buffer
+const createHash = require("sha.js");
 const pbkdf2_1 = require("pbkdf2");
 const randomBytes = require("randombytes");
 const _wordlists_1 = require("./_wordlists");
@@ -150,6 +151,7 @@ function validateMnemonic(mnemonic, wordlist) {
         mnemonicToEntropy(mnemonic, wordlist);
     }
     catch (e) {
+        console.log(e);
         return false;
     }
     return true;
